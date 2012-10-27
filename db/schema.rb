@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20121025202357) do
     t.string   "car_model"
     t.string   "make"
     t.string   "year"
+    t.integer  "driver_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -27,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20121025202357) do
     t.string   "email"
     t.string   "position"
     t.string   "phone"
-    t.integer  "car_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

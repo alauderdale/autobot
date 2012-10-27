@@ -10,9 +10,10 @@
       year
     %th
       id
+    %th
+      driver_id
   %tr
   -@cars.each do |c|
-    = c.inspect
     %tr
       %td
         = c.make
@@ -22,6 +23,8 @@
         = c.year
       %td
         = c.id
+      %td
+        = c.driver_id
       %td.actions
         = link_to("Delete", {:action => 'delete', :id => c.id}, :class => 'action delete')
 

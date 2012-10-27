@@ -1,7 +1,10 @@
 %h1
-  New Driver
+    New Driver
 
-= render 'form' 
+= form_for(:driver, :url => {:action => 'create'}) do |f| 
+    = render(:partial => 'form', :locals => {:f => f})
+    .form-buttons
+        = submit_tag("New Driver") 
 
 
-= link_to("New Car", ("cars/new"), :class => 'action new')
+= link_to("New Car", :controller => "cars", :action => "new" , :class => "actions new")

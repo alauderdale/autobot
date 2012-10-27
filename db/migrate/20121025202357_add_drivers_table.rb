@@ -6,7 +6,6 @@ class AddDriversTable < ActiveRecord::Migration
       t.string :email
       t.string :position
       t.string :phone
-      t.integer :car_id
       
       t.timestamps
     end

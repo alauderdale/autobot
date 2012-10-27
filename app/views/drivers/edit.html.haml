@@ -1,0 +1,7 @@
+%h2
+    Update Driver
+
+= form_for(:driver, :url => {:action => 'update', :id => @driver.id}) do |f| 
+    = render(:partial => 'form', :locals => {:f => f})
+    .form-buttons
+        = submit_tag("Update Page") 

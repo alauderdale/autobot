@@ -11,9 +11,9 @@
     %th
       phone
     %th
-      position
+      where to find me
     %th
-      car
+      actions
   %tr
   -@drivers.each do |d|
     %tr
@@ -27,13 +27,10 @@
         = d.phone
       %td
         = d.position
-      %td
-        = (d.try(:car).try(:make)) ? (d.try(:car).try(:make)): "no car"
       %td.actions
         = link_to("Delete", {:action => 'delete', :id => d.id}, :class => 'action delete')
+        = link_to("Edit", {:action => 'edit', :id => d.id}, :class => 'action edit')
+        = link_to("Show", {:action => 'show', :id => d.id}, :class => 'action show')
 
 %br
-= link_to("New Driver", {:action => 'new'}, :class => 'action new')
-%br
-= link_to("New Car", ("cars/new"), :class => 'action new')
-
+= link_to("Add Driver", {:action => 'new'}, :class => 'action new')

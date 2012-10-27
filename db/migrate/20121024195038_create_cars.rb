@@ -4,7 +4,7 @@ class CreateCars < ActiveRecord::Migration
       t.string :car_model
       t.string :make
       t.string :year
-      
+      t.integer :driver_id
       t.timestamps
     end
   end

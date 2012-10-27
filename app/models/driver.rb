@@ -1,3 +1,3 @@
 class Driver < ActiveRecord::Base
-  belongs_to :car
+  has_many :cars
 end

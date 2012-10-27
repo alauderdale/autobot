@@ -1,0 +1,44 @@
+%h2
+  Show Driver
+
+%table{:summary => "Driver detail view"}
+  %tr
+    %th
+      Driver
+    %th
+      Driver ID
+  %tr
+    %td
+      = @driver.first_name
+    %td
+      = @driver.id
+
+
+%table{:summary => "Driver cars"}
+  %tr
+    %th
+      Make
+  %tr
+    -@cars.each do |c|
+      -if c.driver_id == @driver.id
+        %td
+          = c.make
+
+= form_for(:car, :url => {:action => 'add_driver_car'}) do |f| 
+  .field
+    = f.label 'make'
+    %br
+    = f.text_field :make
+  .field
+    = f.label 'model'
+    %br
+    = f.text_field :car_model
+  .field
+    = f.label 'year'
+    %br
+    = f.text_field :year
+  .field
+    = f.hidden_field :driver_id , :value => @driver.id
+  .form-buttons
+    = submit_tag("New Car") 
+  
