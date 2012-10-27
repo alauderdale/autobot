@@ -1,0 +1,30 @@
+%h1
+  Cars
+%table.listing{summary: "Cars List"}
+  %tr.header
+    %th
+      make
+    %th
+      model
+    %th
+      year
+    %th
+      id
+  %tr
+  -@cars.each do |c|
+    = c.inspect
+    %tr
+      %td
+        = c.make
+      %td
+        = c.car_model
+      %td
+        = c.year
+      %td
+        = c.id
+      %td.actions
+        = link_to("Delete", {:action => 'delete', :id => c.id}, :class => 'action delete')
+
+%br
+= link_to("New Car", {:action => 'new'}, :class => 'action new')
+

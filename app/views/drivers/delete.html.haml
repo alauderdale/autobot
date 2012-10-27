@@ -1,0 +1,14 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+
+.page.delete
+  %h2
+    Delete driver
+
+  = form_for(:driver, :url => {:action => 'destroy', :id => @driver.id}) do |f|
+    %p
+      Are you sure you want to permanently delete this driver?
+    %p.refrence-name
+      page Name:
+      = @driver.first_name
+    .form-buttons
+      = submit_tag("Delete Driver")

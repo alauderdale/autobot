@@ -1,0 +1,39 @@
+%h1
+  Drivers
+%table.listing{summary: "Driver List"}
+  %tr.header
+    %th
+      First Name
+    %th
+      Last Name
+    %th
+      email
+    %th
+      phone
+    %th
+      position
+    %th
+      car
+  %tr
+  -@drivers.each do |d|
+    %tr
+      %td
+        = d.first_name
+      %td
+        = d.last_name
+      %td
+        = d.email
+      %td
+        = d.phone
+      %td
+        = d.position
+      %td
+        = (d.try(:car).try(:make)) ? (d.try(:car).try(:make)): "no car"
+      %td.actions
+        = link_to("Delete", {:action => 'delete', :id => d.id}, :class => 'action delete')
+
+%br
+= link_to("New Driver", {:action => 'new'}, :class => 'action new')
+%br
+= link_to("New Car", ("cars/new"), :class => 'action new')
+

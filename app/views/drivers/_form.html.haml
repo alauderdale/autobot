@@ -1,0 +1,24 @@
+= form_for(:driver, :url => {:action => 'create'}) do |f|
+  .field
+    = f.label 'first name'
+    %br
+    = f.text_field :first_name 
+  .field
+    = f.label 'last name'
+    %br
+    = f.text_field :last_name
+  .field
+    = f.label 'email'
+    %br
+    = f.text_field :email
+  .field
+    = f.label 'phone'
+    %br
+    = f.text_field :phone
+  .field
+    = f.label 'car id'
+    %br
+    = f.text_field :car_id
+  .actions
+    = f.submit :value => 'Create Acct' , :class => 'button'
+
